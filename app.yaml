@@ -1,0 +1,25 @@
+application: webscreenshotter
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /sripts
+  static_dir: sripts
+
+# TODO only for debug
+- url: /tools/print-env-var
+  script: print-env-var.app
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: "2.6"
