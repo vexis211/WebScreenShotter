@@ -5,6 +5,5 @@ __author__ = 'Jan Skalicky<hskalicky@gmail.com>'
 
 
 
-class MainHandler(webapp2.RequestHandler):
-    def post(self):
-        self.response.write('Hello world!')
+class ScreenShotRequest():
+    uri

@@ -12,8 +12,8 @@ handlers:
   static_dir: sripts
 
 # TODO only for debug
-- url: /tools/print-env-var
-  script: print-env-var.app
+- url: /tools/.*
+  script: tools.package.app
 
 - url: .*
   script: main.app
