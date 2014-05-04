@@ -18,6 +18,7 @@
 import os
 import webapp2
 import jinja2
+from screenshotrequests import RequestsHandler, CreateRequestHandler
 from webscreenshots import get_last_screenshots
 
 
@@ -39,5 +40,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/Request', RequestsHandler),
+    ('/Request/Create', CreateRequestHandler),
 ], debug=True)

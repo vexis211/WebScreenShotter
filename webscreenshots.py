@@ -1,23 +1,25 @@
 # coding=utf-8
 import datetime
+from urlparse import urlparse
 from google.appengine.ext import ndb
 
-__author__ = 'Jan Skalicky<hskalicky@gmail.com>'
+__author__ = 'Jan Skalicky <hskalicky@gmail.com>'
 
 
 class WebScreenShot(ndb.Model):
-    def __init__(self, site_uri, site_sec_dom_uri, created, image_ri, thumb_uri):
-        self.siteUri = site_uri
-        self.siteSecondDomUri = site_sec_dom_uri
+    def __init__(self, site_uri, site_host_uri, created, image_ri, thumb_uri, **kwds):
+        super(WebScreenShot, self).__init__(**kwds)
+        self.site_uri = site_uri
+        self.site_host_uri = site_host_uri
         self.created = created
-        self.imageUri = image_ri
-        self.thumbUri = thumb_uri
+        self.image_uri = image_ri
+        self.thumb_uri = thumb_uri
 
-    siteUri = ndb.StringProperty()
-    siteSecondDomUri = ndb.StringProperty()
+    site_uri = ndb.StringProperty()
+    site_host_uri = ndb.StringProperty()
     created = ndb.DateTimeProperty(auto_now_add=True)
-    imageUri = ndb.StringProperty()
-    thumbUri = ndb.StringProperty()
+    image_uri = ndb.StringProperty()
+    thumb_uri = ndb.StringProperty()
 
 
 def get_last_screenshots(count=10):
@@ -26,15 +28,15 @@ def get_last_screenshots(count=10):
     return screenshots
 
 
-def find_screenshots(second_dom_uri, count=100):
-    query = WebScreenShot.query(WebScreenShot.siteSecondDomUri == second_dom_uri) \
+def find_screenshots(host_uri, count=100):
+    query = WebScreenShot.query(WebScreenShot.site_host_uri == host_uri) \
         .order(-WebScreenShot.created)
     screenshots = query.fetch(count)
     return screenshots
 
 
 def save_screenshot(site_uri, image_uri, thumb_uri):
-    site_sec_dom_uri = 'TODO'
+    site_host_uri = urlparse(site_uri).hostname
     created = datetime.datetime.now()
-    shot = WebScreenShot(site_uri, site_sec_dom_uri, created, image_uri, thumb_uri)
+    shot = WebScreenShot(site_uri, site_host_uri, created, image_uri, thumb_uri)
     shot.put()
