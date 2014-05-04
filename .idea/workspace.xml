@@ -105,7 +105,7 @@
       <file leaf-file-name="create_request.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/pages/create_request.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="63" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.88726515" vertical-offset="0" max-vertical-offset="901">
+            <state line="21" column="36" selection-start="799" selection-end="799" vertical-scroll-proportion="0.3611691" vertical-offset="184" max-vertical-offset="901">
               <folding />
             </state>
           </provider>
@@ -1034,7 +1034,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pages/create_request.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="63" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.88726515" vertical-offset="0" max-vertical-offset="901">
+        <state line="21" column="36" selection-start="799" selection-end="799" vertical-scroll-proportion="0.3611691" vertical-offset="184" max-vertical-offset="901">
           <folding />
         </state>
       </provider>
