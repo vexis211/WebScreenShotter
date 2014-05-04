@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d5fa14e-8914-459e-855b-eb6a39bf1fb6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshotrequests.py" afterPath="$PROJECT_DIR$/screenshotrequests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2d5fa14e-8914-459e-855b-eb6a39bf1fb6" name="Default" comment="" />
     <ignored path="WebScreenShotter.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -108,7 +105,7 @@
       <file leaf-file-name="create_request.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/pages/create_request.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="50" selection-start="477" selection-end="477" vertical-scroll-proportion="0.5678497" vertical-offset="0" max-vertical-offset="901">
+            <state line="25" column="63" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.88726515" vertical-offset="0" max-vertical-offset="901">
               <folding />
             </state>
           </provider>
@@ -662,7 +659,7 @@
     <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3275649" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3275649" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1037,7 +1034,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pages/create_request.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="477" selection-end="477" vertical-scroll-proportion="0.5678497" vertical-offset="0" max-vertical-offset="901">
+        <state line="25" column="63" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.88726515" vertical-offset="0" max-vertical-offset="901">
           <folding />
         </state>
       </provider>
