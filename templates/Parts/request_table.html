@@ -1,0 +1,18 @@
+<table class="table">
+    <tr>
+        <th>
+            Site uri
+        </th>
+        <th>
+            Screen-shotting mode
+        </th>
+    </tr>
+
+    {% for item in requests %}
+        <tr>
+            <td><a href="{{ item.site_uri }}">{{ item.site_uri }}</a></td>
+            <td>{{ item.mode }}</td>
+        </tr>
+    {% endfor %}
+</table>
+

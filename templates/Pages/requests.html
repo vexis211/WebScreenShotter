@@ -1,0 +1,19 @@
+{% extends 'layouts/main.html' %}
+
+{% block title %}Requests{% endblock %}
+
+{% block content %}
+    <h2>Part of request queue to process:</h2>
+
+    <p>
+        Approximate count of unprocessed requests: {{ approx_request_count }}.
+    </p>
+    <p>
+        Follows next requests waiting for processing:
+    </p>
+
+    <div id="entryList">
+        {% include 'parts/request_table.html' with context %}
+    </div>
+
+{% endblock %}

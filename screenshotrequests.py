@@ -8,10 +8,13 @@ __author__ = 'Jan Skalicky<hskalicky@gmail.com>'
 
 class RequestsHandler(webapp2.RequestHandler):
     def get(self):
-        requests = get_last_screenshots()
+        #TODO
+        requests = []
+        approx_request_count = 0
 
         template_values = {
-            'requests' : requests
+            'requests': requests,
+            'approx_request_count': approx_request_count,
         }
 
         template = JINJA_ENVIRONMENT.get_template('pages/home.html')

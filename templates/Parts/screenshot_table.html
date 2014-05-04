@@ -7,8 +7,8 @@
 
     {% for item in screenshots %}
         <tr>
-            <td><a href="{{ item.imageUri }}"><img src="{{ item.thumbUri }}" /></a></td>
-            <td><a href="{{ item.siteUri }}">{{ item.siteUri }}</a></td>
+            <td><a href="{{ item.image_uri }}"><img src="{{ item.thumb_uri }}" /></a></td>
+            <td><a href="{{ item.site_uri }}">{{ item.site_uri }}</a></td>
             <td>{{ item.created }}</td>
         </tr>
     {% endfor %}
