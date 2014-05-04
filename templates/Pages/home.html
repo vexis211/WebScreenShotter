@@ -1,0 +1,17 @@
+{% extends 'layouts/main.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="search">
+        <form action="/" method="GET" data-otf-ajax="true" data-otf-target="#entryList">
+            <label for="screenShotSearchInput">Enter second domain URI:</label><br />
+            <input id="screenShotSearchInput" type="search" name="searchingUri" class="search-box" /><br />
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+
+    <div id="entryList">
+        {% include 'parts/screenshot_table.html' with context %}
+    </div>
+{% endblock %}
