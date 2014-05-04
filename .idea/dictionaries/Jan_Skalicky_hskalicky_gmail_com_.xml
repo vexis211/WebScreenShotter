@@ -5,6 +5,11 @@
       <w>endfor</w>
       <w>endif</w>
       <w>jinja</w>
+      <w>modernizr</w>
+      <w>pagedlist</w>
+      <w>screenshot</w>
+      <w>screenshotter</w>
+      <w>skalický</w>
     </words>
   </dictionary>
 </component>

@@ -21,21 +21,25 @@ import jinja2
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+
+        screenshots = []
+
         template_values = {
+            'screenshots' : screenshots,
             # 'greetings': greetings,
             # 'guestbook_name': urllib.quote_plus(guestbook_name),
             # 'url': url,
             # 'url_linktext': url_linktext,
         }
 
-        template = JINJA_ENVIRONMENT.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('pages/home.html')
         self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
