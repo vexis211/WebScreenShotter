@@ -18,6 +18,7 @@
 import os
 import webapp2
 import jinja2
+from webscreenshots import get_last_screenshots
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -28,15 +29,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
-        screenshots = []
+        screenshots = get_last_screenshots()
 
         template_values = {
-            'screenshots' : screenshots,
-            # 'greetings': greetings,
-            # 'guestbook_name': urllib.quote_plus(guestbook_name),
-            # 'url': url,
-            # 'url_linktext': url_linktext,
+            'screenshots' : screenshots
         }
 
         template = JINJA_ENVIRONMENT.get_template('pages/home.html')
