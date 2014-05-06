@@ -101,3 +101,32 @@ input[type="checkbox"].input-validation-error {
 footer > p{
     margin: 0 0 0 15px;
 }
+
+.create-req-form {
+    min-width: 570px;
+}
+.create-req-label {
+    white-space: nowrap;
+    float: left;
+    width: 170px;
+}
+.create-req-input {
+    min-width: 400px;
+    height: 24px;
+    margin-bottom: 6px;
+    float: left;
+}
+.create-req-but {
+    float: left;
+    margin-top: 5px;
+    margin-right: 20px;
+    height: 24px;
+}
+
+.create-req-but > input {
+}
+.create-req-but > a {
+    vertical-align: middle;
+    display: block;
+    margin-top: 3px;
+}

@@ -3,45 +3,41 @@
 {% block title %}Create request{% endblock %}
 
 {% block content %}
-
     <h2>Create</h2>
 
     <form action="/Request/Create" method="post">
-        <div class="form-horizontal">
+        <div class="create-req-form">
             <h4>Create request</h4>
             <hr />
 
-            <div class="form-group">
-                <label class="control-label col-md-2" for="site-uri">WebUri</label>
-                <div class="col-md-10">
-                    <input class="text-box single-line" data-val="true" data-val-required="The WebUri field is required." id="site-uri" name="WebUri" type="text" value="" />
-                    <span class="field-validation-valid" data-valmsg-for="WebUri" data-valmsg-replace="true"></span>
+            <div>
+                <label class="create-req-label" for="site-uri">WebUri</label>
+                <div>
+                    <input class="create-req-input" data-val="true" data-val-required="The WebUri field is required." id="site_uri" name="WebUri" type="text" value="{{ site_uri }}" />
+                    <span data-valmsg-for="WebUri" data-valmsg-replace="true"></span>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="control-label col-md-2" for="mode">ScreenShotingMode</label>
-                <div class="col-md-10">
-                    <select class="combo-box" data-val="true" data-val-required="The ScreenShotingMode field is required." id="mode" name="ScreenShotingMode">
+            <div>
+                <label class="create-req-label" for="mode">Screen-shotting mode</label>
+                <div>
+                    <select class="create-req-input" data-val="true" data-val-required="The ScreenShotingMode field is required." id="mode" name="ScreenShotingMode">
                         <option value="">Choose please</option>
-                        <option value="0">OnePage</option>
-                        <option value="1">WholePageSubTree</option>
+                        <option value="0" {% if mode == 0 %} selected {% endif %}>One page</option>
+                        <option value="1" {% if mode == 1 %} selected {% endif %}>Whole page subtree</option>
                     </select>
 
-                    <span class="field-validation-valid" data-valmsg-for="ScreenShotingMode" data-valmsg-replace="true"></span>
+                    <span data-valmsg-for="ScreenShotingMode" data-valmsg-replace="true"></span>
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
+            <div class="create-req-but">
+                <input type="submit" value="Create" />
             </div>
         </div>
     </form>
 
-    <div>
+    <div class="create-req-but">
         <a href="/Request">Back to List</a>
     </div>
-
 {% endblock %}

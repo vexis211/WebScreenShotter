@@ -38,5 +38,6 @@ def find_screenshots(host_uri, count=100):
 def save_screenshot(site_uri, image_uri, thumb_uri):
     site_host_uri = urlparse(site_uri).hostname
     created = datetime.datetime.now()
+
     shot = WebScreenShot(site_uri, site_host_uri, created, image_uri, thumb_uri)
     shot.put()
