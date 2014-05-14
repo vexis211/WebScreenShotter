@@ -11,14 +11,14 @@
             <hr />
 
             <div>
-                <label class="create-req-label" for="site-uri">WebUri</label>
+                <label class="create-req-label" for="site-uri">Site uri</label>
                 <div>
-                    <input class="create-req-input" data-val="true" data-val-required="The WebUri field is required." id="site_uri" name="WebUri" type="text" value="{{ site_uri }}" />
-                    <span data-valmsg-for="WebUri" data-valmsg-replace="true"></span>
+                    <input class="create-req-input" data-val="true" data-val-required="The WebUri field is required." id="site_uri" name="site_uri" type="text" value="{{ site_uri }}" />
                 </div>
+                <span class="create-req-label-error" data-valmsg-for="WebUri" data-valmsg-replace="true">{{ site_uri_errors }}</span>
             </div>
 
-            <div>
+            <!--<div>
                 <label class="create-req-label" for="mode">Screen-shotting mode</label>
                 <div>
                     <select class="create-req-input" data-val="true" data-val-required="The ScreenShotingMode field is required." id="mode" name="ScreenShotingMode">
@@ -29,7 +29,7 @@
 
                     <span data-valmsg-for="ScreenShotingMode" data-valmsg-replace="true"></span>
                 </div>
-            </div>
+            </div>-->
 
             <div class="create-req-but">
                 <input type="submit" value="Create" />

@@ -1,33 +1,32 @@
 # coding=utf-8
 import sys
+
 sys.path.insert(0, 'libs')
 
-from django.core.exceptions import ValidationError
+from services.screenshots import ScreenShotRequestManager
 from django.core.validators import URLValidator
-import enum
 import webapp2
 from templating import Templates
 
 __author__ = 'Jan Skalicky <hskalicky@gmail.com>'
 
 
-class ScreenShottingMode(enum.Enum):
-    single_page = 0,
-    whole_page_subtree = 1,
-
-
 class RequestsHandler(webapp2.RequestHandler):
     def get(self):
-        #TODO both vars
-        requests = []
-        approx_request_count = 0
+        # requests = self.get_waiting_requests()
+
+        # approx_request_count = requests.count()
+        approx_request_count = ScreenShotRequestManager.get_approx_requests_count()
 
         template_values = {
-            'requests': requests,
+            # 'requests': requests,
             'approx_request_count': approx_request_count,
         }
 
         self.response.write(Templates.render('pages/requests.html', template_values))
+
+        # def get_waiting_requests(self):
+        #     return []
 
 
 class CreateRequestHandler(webapp2.RequestHandler):
@@ -35,36 +34,30 @@ class CreateRequestHandler(webapp2.RequestHandler):
         self.response.write(Templates.render('pages/create_request.html'))
 
     def post(self):
-        site_url = self.request.get('site_url')
-        mode = self.request.get('mode')
+        site_uri = self.request.get('site_uri')
 
-        if self.is_form_valid(site_url, mode):
-            self.create_screenshot_request(site_url, mode)
+        if self.is_form_valid(site_uri):
+            ScreenShotRequestManager.create(site_uri)
             # render request list
-            self.response.write(Templates.render('pages/requests.html'))
+            approx_request_count = ScreenShotRequestManager.get_approx_requests_count()
+            template_values = {
+                'approx_request_count': approx_request_count,
+            }
+            self.response.write(Templates.render('pages/requests.html', template_values))
         else:
             template_values = {
-                'site_url': site_url,
-                'mode': mode,
+                'site_uri': site_uri,
+                'site_uri_errors': 'This is not valid URL! Please check and try to submit again.'
             }
             # render create request with validation
             self.response.write(Templates.render('pages/create_request.html', template_values))
 
     @staticmethod
-    def is_form_valid(site_url, mode):
+    def is_form_valid(site_uri):
         val = URLValidator(verify_exists=False)
         try:
-            val(site_url)
-        except ValidationError:
-            return False
-
-        if mode != ScreenShottingMode.single_page and \
-           mode != ScreenShottingMode.whole_page_subtree:
+            val(site_uri)
+        except:  # TODO not nice :-)
             return False
 
         return True
-
-    @staticmethod
-    def create_screenshot_request(site_url, mode):
-        #TODO
-        pass

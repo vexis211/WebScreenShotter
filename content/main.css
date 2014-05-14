@@ -110,6 +110,11 @@ footer > p{
     float: left;
     width: 170px;
 }
+
+.create-req-label-error {
+    color: red;
+}
+
 .create-req-input {
     min-width: 400px;
     height: 24px;

@@ -3,15 +3,15 @@
         <th>
             Site uri
         </th>
-        <th>
+        <!--<th>
             Screen-shotting mode
-        </th>
+        </th>-->
     </tr>
 
     {% for item in requests %}
         <tr>
             <td><a href="{{ item.site_uri }}">{{ item.site_uri }}</a></td>
-            <td>{{ item.mode }}</td>
+            <!--<td>{{ item.mode }}</td>-->
         </tr>
     {% endfor %}
 </table>

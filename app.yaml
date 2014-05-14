@@ -15,6 +15,9 @@ handlers:
 - url: /tools/.*
   script: tools.package.app
 
+- url: /services/.*
+  script: services.package.app
+
 - url: .*
   script: main.app
 
