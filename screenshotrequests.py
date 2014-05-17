@@ -22,7 +22,7 @@ class RequestsHandler(BaseHandler):
             'approx_request_count': approx_request_count,
         }
 
-        self.render_response('pages/requests.html', template_values)
+        self.render_response('page_requests.html', template_values)
 
         # def get_waiting_requests(self):
         #     return []
@@ -30,7 +30,7 @@ class RequestsHandler(BaseHandler):
 
 class CreateRequestHandler(BaseHandler):
     def get(self):
-        self.render_response('pages/create_request.html')
+        self.render_response('page_create_request.html')
 
     def post(self):
         site_uri = self.request.get('site_uri')
@@ -45,7 +45,7 @@ class CreateRequestHandler(BaseHandler):
                 'site_uri_errors': 'This is not valid URL! Please check and try to submit again.'
             }
             # render create request with validation
-            self.render_response('pages/create_request.html', template_values)
+            self.render_response('page_create_request.html', template_values)
 
     @staticmethod
     def is_form_valid(site_uri):

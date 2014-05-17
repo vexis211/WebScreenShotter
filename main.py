@@ -15,13 +15,13 @@ class MainHandler(BaseHandler):
             template_values = {
                 'screenshots': screenshots
             }
-            self.render_response('parts/screenshot_table.html', template_values)
+            self.render_response('part_screenshot_table.html', template_values)
         else:
             screenshots = get_last_screenshots()
             template_values = {
                 'screenshots': screenshots
             }
-            self.render_response('home.html', template_values)
+            self.render_response('page_home.html', template_values)
 
 
 class ImagesHandler(BaseHandler):
@@ -30,7 +30,7 @@ class ImagesHandler(BaseHandler):
         template_values = {
             'screenshots': screenshots
         }
-        self.render_response('pages/images.html', template_values)
+        self.render_response('page_images.html', template_values)
 
 
 app = webapp2.WSGIApplication([
