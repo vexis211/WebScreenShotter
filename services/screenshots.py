@@ -8,7 +8,7 @@ from google.appengine.api import files
 from google.appengine.api import images
 
 from google.appengine.api.taskqueue import taskqueue
-import webapp2
+from templating import BaseHandler
 
 from services import blobs
 
@@ -34,7 +34,7 @@ class ScreenShotRequestManager(object):
         return taskqueue.QueueStatistics.fetch(taskqueue.Queue(queue_name)).tasks
 
 
-class ScreenShotRequestHandler(webapp2.RequestHandler):
+class ScreenShotRequestHandler(BaseHandler):
     def post(self):
         site_uri = self.request.get('site_uri')
         screenshot_key = make_screenshot(site_uri)

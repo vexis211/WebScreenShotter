@@ -1,18 +1,16 @@
 # coding=utf-8
 import sys
-from urlparse import urlparse
 
 sys.path.insert(0, 'libs')
 
 from services.screenshots import ScreenShotRequestManager
 from django.core.validators import URLValidator
-import webapp2
-from templating import Templates
+from templating import BaseHandler
 
 __author__ = 'Jan Skalicky <hskalicky@gmail.com>'
 
 
-class RequestsHandler(webapp2.RequestHandler):
+class RequestsHandler(BaseHandler):
     def get(self):
         # requests = self.get_waiting_requests()
 
@@ -24,15 +22,15 @@ class RequestsHandler(webapp2.RequestHandler):
             'approx_request_count': approx_request_count,
         }
 
-        self.response.write(Templates.render('pages/requests.html', template_values))
+        self.render_response('pages/requests.html', template_values)
 
         # def get_waiting_requests(self):
         #     return []
 
 
-class CreateRequestHandler(webapp2.RequestHandler):
+class CreateRequestHandler(BaseHandler):
     def get(self):
-        self.response.write(Templates.render('pages/create_request.html'))
+        self.render_response('pages/create_request.html')
 
     def post(self):
         site_uri = self.request.get('site_uri')
@@ -47,7 +45,7 @@ class CreateRequestHandler(webapp2.RequestHandler):
                 'site_uri_errors': 'This is not valid URL! Please check and try to submit again.'
             }
             # render create request with validation
-            self.response.write(Templates.render('pages/create_request.html', template_values))
+            self.render_response('pages/create_request.html', template_values)
 
     @staticmethod
     def is_form_valid(site_uri):
