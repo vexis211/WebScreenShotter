@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d5fa14e-8914-459e-855b-eb6a39bf1fb6" name="Default" comment="request templates">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebScreenShotter.iws" />
@@ -30,19 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="34" selection-start="191" selection-end="191" vertical-scroll-proportion="0.032882012" vertical-offset="85" max-vertical-offset="799">
-              <folding />
+            <state line="41" column="0" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="799">
+              <folding>
+                <element signature="e#37#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.yaml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.yaml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+            <state line="26" column="14" selection-start="389" selection-end="389" vertical-scroll-proportion="0.7369439" vertical-offset="61" max-vertical-offset="646">
               <folding />
             </state>
           </provider>
@@ -152,11 +153,11 @@
         <option value="$PROJECT_DIR$/BaseHandler.py" />
         <option value="$PROJECT_DIR$/services/screenshots.py" />
         <option value="$PROJECT_DIR$/screenshotrequests.py" />
-        <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/templating.py" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/templates/pages/home.html" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/app.yaml" />
       </list>
     </option>
   </component>
@@ -1017,16 +1018,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.yaml">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <folding />
+        <state line="41" column="0" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="799">
+          <folding>
+            <element signature="e#37#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="191" selection-end="191" vertical-scroll-proportion="0.032882012" vertical-offset="85" max-vertical-offset="799">
+        <state line="26" column="14" selection-start="389" selection-end="389" vertical-scroll-proportion="0.7369439" vertical-offset="61" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
