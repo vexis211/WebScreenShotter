@@ -11,12 +11,7 @@ class BaseHandler(webapp2.RequestHandler):
     def jinja_env(self):
         # Returns a Jinja2 renderer cached in the app registry.
         return jinja2.Environment(
-            loader=jinja2.FileSystemLoader([
-                'templates/layouts',
-                'templates/macros',
-                'templates/pages',
-                'templates/parts',
-            ]),
+            loader=jinja2.FileSystemLoader('templates'),
             extensions=['jinja2.ext.autoescape'],
             autoescape=True)
 
