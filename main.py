@@ -21,7 +21,7 @@ class MainHandler(BaseHandler):
             template_values = {
                 'screenshots': screenshots
             }
-            self.render_response('pages/home.html', template_values)
+            self.render_response('home.html', template_values)
 
 
 class ImagesHandler(BaseHandler):
