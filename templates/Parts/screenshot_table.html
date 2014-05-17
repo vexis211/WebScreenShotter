@@ -1,21 +1,23 @@
-<table class="screenshot-table">
-    <tr>
-        <th>Thumbnail</th>
-        <th>URI</th>
-        <th>Time captured</th>
-    </tr>
-
-    {% for item in screenshots %}
+<div id="entryList">
+    <table class="screenshot-table">
         <tr>
-            <td><a href="{{ item.image_uri }}"><img src="{{ item.thumb_uri }}" /></a></td>
-            <td><a href="{{ item.site_uri }}">{{ item.site_uri }}</a></td>
-            <td>{{ item.created }}</td>
+            <th>Thumbnail</th>
+            <th>URI</th>
+            <th>Time captured</th>
         </tr>
-    {% endfor %}
 
-{# TODO pagedlist
-</table>
-<div class="pagedList" data-otf-target="#entryList">
-    <div class="pagination-container"><ul class="pagination"><li class="disabled PagedList-skipToPrevious"><a rel="prev">«</a></li><li class="disabled PagedList-pageCountAndLocation"><a>Showing items 1 through 7 of 7.</a></li><li class="disabled PagedList-skipToNext"><a rel="next">»</a></li></ul></div>
-</div> #}
-</table>
+        {% for item in screenshots %}
+            <tr>
+                <td><a href="{{ item.image_uri }}"><img src="{{ item.thumb_uri }}" /></a></td>
+                <td><a href="{{ item.site_uri }}">{{ item.site_uri }}</a></td>
+                <td>{{ item.created }}</td>
+            </tr>
+        {% endfor %}
+
+    {# TODO pagedlist
+    </table>
+    <div class="pagedList" data-otf-target="#entryList">
+        <div class="pagination-container"><ul class="pagination"><li class="disabled PagedList-skipToPrevious"><a rel="prev">«</a></li><li class="disabled PagedList-pageCountAndLocation"><a>Showing items 1 through 7 of 7.</a></li><li class="disabled PagedList-skipToNext"><a rel="next">»</a></li></ul></div>
+    </div> #}
+    </table>
+</div>

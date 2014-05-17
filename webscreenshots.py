@@ -7,14 +7,6 @@ __author__ = 'Jan Skalicky <hskalicky@gmail.com>'
 
 
 class WebScreenShot(ndb.Model):
-    def __init__(self, site_uri, site_host_uri, created, image_ri, thumb_uri, **kwds):
-        super(WebScreenShot, self).__init__(**kwds)
-        self.site_uri = site_uri
-        self.site_host_uri = site_host_uri
-        self.created = created
-        self.image_uri = image_ri
-        self.thumb_uri = thumb_uri
-
     site_uri = ndb.StringProperty()
     site_host_uri = ndb.StringProperty()
     created = ndb.DateTimeProperty(auto_now_add=True)
@@ -24,12 +16,22 @@ class WebScreenShot(ndb.Model):
 
 def get_last_screenshots(count=10):
     query = WebScreenShot.query().order(-WebScreenShot.created)
-    screenshots = query.fetch(count)
+    screenshots = query.fetch(count, read_policy=ndb.EVENTUAL_CONSISTENCY)
     return screenshots
 
 
-def find_screenshots(host_uri, count=100):
-    query = WebScreenShot.query(WebScreenShot.site_host_uri == host_uri) \
+def get_screenshot_only_images(count=100):
+    query = WebScreenShot.query().order(-WebScreenShot.created)
+    screenshots = query.fetch(count, read_policy=ndb.EVENTUAL_CONSISTENCY,
+                              projection=[WebScreenShot.image_uri, WebScreenShot.thumb_uri])
+    return screenshots
+
+
+def find_screenshots(uri, count=100):
+    site_host_uri = urlparse(uri).hostname
+    if not site_host_uri:
+        site_host_uri = uri
+    query = WebScreenShot.query(WebScreenShot.site_host_uri == site_host_uri) \
         .order(-WebScreenShot.created)
     screenshots = query.fetch(count)
     return screenshots
@@ -39,5 +41,6 @@ def save_screenshot(site_uri, image_uri, thumb_uri):
     site_host_uri = urlparse(site_uri).hostname
     created = datetime.datetime.now()
 
-    shot = WebScreenShot(site_uri, site_host_uri, created, image_uri, thumb_uri)
+    shot = WebScreenShot(site_uri=site_uri, site_host_uri=site_host_uri,
+                         created=created, image_uri=image_uri, thumb_uri=thumb_uri)
     shot.put()

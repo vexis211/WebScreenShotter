@@ -1,5 +1,6 @@
 # coding=utf-8
 import sys
+from urlparse import urlparse
 
 sys.path.insert(0, 'libs')
 
@@ -39,11 +40,7 @@ class CreateRequestHandler(webapp2.RequestHandler):
         if self.is_form_valid(site_uri):
             ScreenShotRequestManager.create(site_uri)
             # render request list
-            approx_request_count = ScreenShotRequestManager.get_approx_requests_count()
-            template_values = {
-                'approx_request_count': approx_request_count,
-            }
-            self.response.write(Templates.render('pages/requests.html', template_values))
+            self.redirect('/Request')
         else:
             template_values = {
                 'site_uri': site_uri,

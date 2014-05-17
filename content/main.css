@@ -135,3 +135,18 @@ footer > p{
     display: block;
     margin-top: 3px;
 }
+
+.float-image {
+    float: left;
+    background: black;
+    border: 2px solid white;
+    line-height: 80px;
+}
+
+.images-container {
+    width: 600px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+}

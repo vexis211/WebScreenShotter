@@ -1,0 +1,15 @@
+{% extends 'layouts/main.html' %}
+
+{% block title %}Images{% endblock %}
+
+{% block content %}
+    <div class="images-container">
+    {% for item in screenshots %}
+        <a href="{{ item.image_uri }}">
+            <div class="float-image">
+                <img src="{{ item.thumb_uri }}" />
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}
